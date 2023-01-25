@@ -5,8 +5,9 @@ using UnityEngine;
 public class CatPaw : MonoBehaviour
 {
     private Transform player;
-    public float maxDist = 5f;
+    [SerializeField] float maxDist = 5f;
     private bool canAttack = true;
+    [SerializeField] float hitForce;
     private Animator anim;
     
     void Start(){
@@ -25,7 +26,17 @@ public class CatPaw : MonoBehaviour
         anim.SetTrigger("attack");
 
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(4f);
         canAttack = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("Trigger hit");
+        if(collision.CompareTag("Player"))
+        {
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb.velocity = hitForce*rb.mass*transform.right + Vector3.up*rb.velocity.y;
+        }
     }
 }
