@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 8394897915105389339}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,6 @@ MonoBehaviour:
   maxVelocity: 50
   rotationSpeed: 4
   grappled: 0
-  hamsterIdle: {fileID: 21300000, guid: fff7f6ecd4524be47a2fe4a98a8598fd, type: 3}
 --- !u!58 &8394897915105389338
 CircleCollider2D:
   m_ObjectHideFlags: 0
