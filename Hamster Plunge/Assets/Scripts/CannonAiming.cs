@@ -15,6 +15,9 @@ public class CannonAiming : MonoBehaviour
 {
     Vector3 mousePosition;
 
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] ShootPlunger shootPlunger;
+
     PlayerControls playerControls;
     InputAction aim;
 
@@ -33,7 +36,10 @@ public class CannonAiming : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Rotate();
+        if (shootPlunger.hasShot == false)
+        {
+            Rotate();
+        }
     }
 
     /// <summary>
