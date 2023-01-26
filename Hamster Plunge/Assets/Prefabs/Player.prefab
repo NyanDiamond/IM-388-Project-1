@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 789029233493513441}
   m_Layer: 3
   m_Name: Pivot
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 8394897915105389338}
   - component: {fileID: 8394897915105389339}
   - component: {fileID: 4113276445888721883}
+  - component: {fileID: 3857134171478141107}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -560,6 +561,21 @@ MonoBehaviour:
   playerMovement: {fileID: 8394897915105389333}
   forceMagnitude: 10
   isMoving: 0
+--- !u!114 &3857134171478141107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394897915105389328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1536a085dbd9d18469de7423485f813f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plungerProjectile: {fileID: 8925194825220671776}
+  grappleMovement: {fileID: 4113276445888721883}
+  playerMovement: {fileID: 8394897915105389333}
 --- !u!1 &8695107453279588294
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,9 +702,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRange: 8
-  moveSpeed: 10
+  moveSpeed: 15
   playerMovement: {fileID: 8394897915105389333}
   grappleMovement: {fileID: 4113276445888721883}
+  grappleCancel: {fileID: 3857134171478141107}
+  suctionTime: 5
 --- !u!114 &4918942133645439183
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -53,6 +53,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""262cf957-ba4e-48e1-87d9-c3dba8a4b228"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -143,6 +152,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a59df05-25ef-46e4-8d2c-70e283b6d571"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -154,6 +174,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Default_Horizontal = m_Default.FindAction("Horizontal", throwIfNotFound: true);
         m_Default_Aim = m_Default.FindAction("Aim", throwIfNotFound: true);
         m_Default_Shoot = m_Default.FindAction("Shoot", throwIfNotFound: true);
+        m_Default_Reload = m_Default.FindAction("Reload", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -216,6 +237,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_Horizontal;
     private readonly InputAction m_Default_Aim;
     private readonly InputAction m_Default_Shoot;
+    private readonly InputAction m_Default_Reload;
     public struct DefaultActions
     {
         private @PlayerControls m_Wrapper;
@@ -223,6 +245,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Horizontal => m_Wrapper.m_Default_Horizontal;
         public InputAction @Aim => m_Wrapper.m_Default_Aim;
         public InputAction @Shoot => m_Wrapper.m_Default_Shoot;
+        public InputAction @Reload => m_Wrapper.m_Default_Reload;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -241,6 +264,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnShoot;
+                @Reload.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -254,6 +280,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
             }
         }
     }
@@ -263,5 +292,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnHorizontal(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
 }

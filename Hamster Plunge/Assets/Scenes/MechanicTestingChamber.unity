@@ -198,6 +198,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8925194825220671776, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
+      propertyPath: moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925194825220671776, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
+      propertyPath: grappleCancel
+      value: 
+      objectReference: {fileID: 1959719863}
     m_RemovedComponents:
     - {fileID: 4333686274759439589, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
@@ -786,3 +794,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1959719863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3857134171478141107, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
+  m_PrefabInstance: {fileID: 218173548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1536a085dbd9d18469de7423485f813f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

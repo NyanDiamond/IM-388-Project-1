@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name :         AhootPlunger.cs
+// Author :            Nick Grinstead
+// Creation Date :     Jan 23, 2023
+//
+// Brief Description : This class shoots the plunger in the direction the player
+                       is aiming when they give an input.
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +26,9 @@ public class ShootPlunger : MonoBehaviour
 
     public bool hasShot = false;
 
+    /// <summary>
+    /// Initializes input and some variables
+    /// </summary>
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -32,14 +43,17 @@ public class ShootPlunger : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
+    /// <summary>
+    /// Called when the player presses a certain button to shoot the plunger
+    /// </summary>
     private void Shoot()
     {
+        // Player can't shoot if plunger has already been shot
         if (!hasShot)
         {
             hasShot = true;
 
             transform.parent = null;
-            //GetComponent<SpriteRenderer>().enabled = false;
 
             // Getting mousePosition
             mousePosition = aim.ReadValue<Vector2>();
@@ -51,20 +65,20 @@ public class ShootPlunger : MonoBehaviour
             float angle = Mathf.Atan2(travelVector.y, travelVector.x) * Mathf.Rad2Deg;
             travelVector = Vector3.Normalize(travelVector);
 
-            //PlungerProjectile newPlunger = Instantiate(plungerProjectile).GetComponent<PlungerProjectile>();
             plungerProjectile.enabled = true;
             boxCollider.enabled = true;
-            //plungerProjectile.SetTravelDirection(travelVector);
         }
     }
 
+    /// <summary>
+    /// Called by other classes to reset plunger cannon
+    /// </summary>
     public void ReloadCannon()
     {
         transform.SetParent(cannonBarrel.transform);
         plungerProjectile.enabled = false;
         boxCollider.enabled = false;
         hasShot = false;
-        //GetComponent<SpriteRenderer>().enabled = true;
     }
 
     /// <summary>
