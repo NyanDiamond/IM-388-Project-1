@@ -827,7 +827,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -856,3 +856,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536a085dbd9d18469de7423485f813f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &7817702268967434826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907961, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817702270077907963, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
+      propertyPath: m_Name
+      value: Swinging Arm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4fd4f5331b273f4899068cc048dd69f, type: 3}
