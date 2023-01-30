@@ -42,13 +42,13 @@ public class CatPaw : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if(AngleDir(transform.position, player.position) > 0)
+            if(/*AngleDir(transform.position, player.position)*/transform.position.x - player.position.x < 0)
             {
                 rb.velocity = hitForce*rb.mass*transform.right*-1 + Vector3.up*rb.velocity.y;
             }
-            if(AngleDir(transform.position, player.position) < 0)
+            else /*if(AngleDir(transform.position, player.position) < 0)*/
             {
-                rb.velocity = hitForce*rb.mass*transform.right + Vector3.up*rb.velocity.y;
+                rb.velocity = hitForce*rb.mass* transform.right + Vector3.up*rb.velocity.y;
             }
             
         }
