@@ -2193,29 +2193,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1634203850}
     m_Modifications:
-    - target: {fileID: 7667407795598836380, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7667407795598836384, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667407795598836384, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667407795598836384, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7667407795598836384, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.2
+      value: -33.1535
       objectReference: {fileID: 0}
     - target: {fileID: 7667407795598836384, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.78
+      value: -2.5009
       objectReference: {fileID: 0}
     - target: {fileID: 7667407795598836384, guid: 0b1b300de7df40749a098a0e9977dac0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6462,7 +6450,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7289,10 +7277,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4113276445888721883, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
+      propertyPath: forceMagnitude
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7964952165697116743, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1544786297}
+    - target: {fileID: 8394897913831464207, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394897913831464207, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8394897915105389328, guid: 6b8bedeeabcba2741a3815e4365d81fc, type: 3}
       propertyPath: m_Name
       value: Player
