@@ -705,7 +705,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6e3544402406e4b4483cd2a9d69da24e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -770,7 +770,7 @@ MonoBehaviour:
   plungerProjectile: {fileID: 8695107453279588294}
   shootBox: {fileID: 8394897913129743221}
   playerMovement: {fileID: 8394897915105389333}
-  forceMagnitude: 25
+  forceMagnitude: 60
   isMoving: 0
 --- !u!114 &3857134171478141107
 MonoBehaviour:

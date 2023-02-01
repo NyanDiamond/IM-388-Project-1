@@ -127,6 +127,7 @@ MonoBehaviour:
   force: 10
   angle: 60
   speed: 100
+  quality: 0.4
 --- !u!1 &7817702270077907963
 GameObject:
   m_ObjectHideFlags: 0
