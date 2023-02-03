@@ -62,6 +62,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AdvanceScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""a3626b87-ef57-4d0b-9822-64f4a14af157"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RevertScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""31f1e8fa-5b4b-4e5e-bd80-ea283a9e3b02"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +181,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5c56f63-db96-44ae-81ae-637580d2b118"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5468b7ab-9962-4663-8fec-37474d917205"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AdvanceScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f8e0919-5a52-45b5-82d1-713606c186b8"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RevertScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -175,6 +226,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Default_Aim = m_Default.FindAction("Aim", throwIfNotFound: true);
         m_Default_Shoot = m_Default.FindAction("Shoot", throwIfNotFound: true);
         m_Default_Reload = m_Default.FindAction("Reload", throwIfNotFound: true);
+        m_Default_AdvanceScene = m_Default.FindAction("AdvanceScene", throwIfNotFound: true);
+        m_Default_RevertScene = m_Default.FindAction("RevertScene", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,6 +291,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_Aim;
     private readonly InputAction m_Default_Shoot;
     private readonly InputAction m_Default_Reload;
+    private readonly InputAction m_Default_AdvanceScene;
+    private readonly InputAction m_Default_RevertScene;
     public struct DefaultActions
     {
         private @PlayerControls m_Wrapper;
@@ -246,6 +301,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_Default_Aim;
         public InputAction @Shoot => m_Wrapper.m_Default_Shoot;
         public InputAction @Reload => m_Wrapper.m_Default_Reload;
+        public InputAction @AdvanceScene => m_Wrapper.m_Default_AdvanceScene;
+        public InputAction @RevertScene => m_Wrapper.m_Default_RevertScene;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -267,6 +324,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Reload.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnReload;
+                @AdvanceScene.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnAdvanceScene;
+                @AdvanceScene.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnAdvanceScene;
+                @AdvanceScene.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnAdvanceScene;
+                @RevertScene.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRevertScene;
+                @RevertScene.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRevertScene;
+                @RevertScene.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRevertScene;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -283,6 +346,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
+                @AdvanceScene.started += instance.OnAdvanceScene;
+                @AdvanceScene.performed += instance.OnAdvanceScene;
+                @AdvanceScene.canceled += instance.OnAdvanceScene;
+                @RevertScene.started += instance.OnRevertScene;
+                @RevertScene.performed += instance.OnRevertScene;
+                @RevertScene.canceled += instance.OnRevertScene;
             }
         }
     }
@@ -293,5 +362,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnAdvanceScene(InputAction.CallbackContext context);
+        void OnRevertScene(InputAction.CallbackContext context);
     }
 }

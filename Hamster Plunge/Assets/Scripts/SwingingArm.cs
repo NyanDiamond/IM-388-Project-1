@@ -8,7 +8,7 @@ public class SwingingArm : MonoBehaviour
     [SerializeField] float force;
     [SerializeField] float angle;
     [SerializeField] float speed;
-
+    [SerializeField] [Tooltip("The higher the number, the worse the quality but the faster the rotation")] float quality = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,25 +26,25 @@ public class SwingingArm : MonoBehaviour
         while (true)
         {
             //Debug.Log("rotate");
-            yield return new WaitForSeconds(0.1f/speed);
+            yield return new WaitForSeconds(quality/ speed);
             if (reverse)
             {
-                transform.Rotate(new Vector3(0, 0, -0.1f));
+                transform.Rotate(new Vector3(0, 0, -quality));
                 //Debug.Log(transform.localRotation.eulerAngles.z);
                 if (transform.localRotation.eulerAngles.z <= 360 - angle && transform.localRotation.eulerAngles.z > 360 - angle - 1) 
                 {
                     reverse = false;
-                    yield return new WaitForSeconds(0.1f/speed);
+                    yield return new WaitForSeconds(quality/ speed);
                 }
             }
             else
             {
-                transform.Rotate(new Vector3(0, 0, 0.1f));
+                transform.Rotate(new Vector3(0, 0, quality));
                 //Debug.Log(transform.rotation.eulerAngles.z);
                 if (transform.localRotation.eulerAngles.z >= angle && transform.localRotation.eulerAngles.z <= angle+1)
                 {
                     reverse = true;
-                    yield return new WaitForSeconds(0.1f/speed);
+                    yield return new WaitForSeconds(quality/ speed);
                 }
             }
 

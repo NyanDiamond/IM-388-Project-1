@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    SceneCheckpoints sceneCheckpoints;
+
+    private void Awake()
     {
-        
+        sceneCheckpoints = GameObject.FindGameObjectWithTag("SceneChanger").GetComponent<SceneCheckpoints>();
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             print("Restart!");
-            SceneManager.LoadScene(0);
+            sceneCheckpoints.ResetScene();
         }
     }
 }
