@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneLevels/Speed-1.unity
     guid: 8936c7ea251b4e34a8f923b9db589d9a
+  - enabled: 1
+    path: Assets/Scenes/SceneLevels/WinScreen.unity
+    guid: 105a48111ca9a9a4ca8ec2c480d07e58
   m_configObjects: {}

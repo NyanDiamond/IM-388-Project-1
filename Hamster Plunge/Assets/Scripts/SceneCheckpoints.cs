@@ -30,13 +30,14 @@ public class SceneCheckpoints : MonoBehaviour
     private void ChangeScene(int changeDir)
     {
         currentScene += changeDir;
+        // Numbers chosen arbitrarily based on the number of scenes we have
         if (currentScene < 0)
         {
             currentScene = 0;
         }
-        else if (currentScene >= SceneManager.sceneCount)
+        else if (currentScene >= 4)
         {
-            currentScene = SceneManager.sceneCount - 1;
+            currentScene = 3;
         }
         SceneManager.LoadScene(currentScene);
     }
