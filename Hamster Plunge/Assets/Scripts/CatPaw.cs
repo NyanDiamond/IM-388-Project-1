@@ -24,7 +24,8 @@ public class CatPaw : MonoBehaviour
     IEnumerator pawSwipe (){
         canAttack = false;
         anim.SetTrigger("attack");
-        if(AngleDir(transform.position, player.position) < 90)
+        Debug.Log(AngleDir(transform.position, player.position));
+        if(AngleDir(transform.position, player.position) > 0)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
